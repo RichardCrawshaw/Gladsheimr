@@ -282,7 +282,7 @@ namespace Cbus.Odin
     var nonEnumProperties =
         builder.OpCodeBlocks
             .SelectMany(n => n.Properties)
-            .Select(n => new { n.Name, n.DataType, n.Format, })
+            .Select(n => new { Name = n.Name.TrimEnd("0123456789".ToCharArray()), n.DataType, n.Format, })
             .Distinct()
             .OrderBy(n => n.DataType)
             .ThenBy(n => n.Name)
@@ -301,10 +301,7 @@ namespace Cbus.Odin
 
 <#  foreach (var property in nonEnumProperties.Where(n => n.DataType.Equals("bool")))
     {
-        var userControlName = property.Name;
-        while ("0123456789".ToCharArray().Contains(userControlName[userControlName.Length - 1]))
-            userControlName.Substring(0, userControlName.Length - 1);
-        userControlName += "Control";
+        var userControlName = property.Name + "Control";
         var controlType = "radioButtons";
         if (property.Format == "On|Off")
             controlType = "checkBox";
@@ -485,15 +482,7 @@ namespace Cbus.Odin
     
     #region Byte user controls
 
-<#  var regex = new Regex(@"^(.*)\d*$");
-    var bytePropertyNames =
-        nonEnumProperties
-            .Where(n => n.DataType.Equals("byte"))
-            .Select(n => new { Name = regex.Matches(n.Name)[0].Value, n.DataType, n.Format, })
-            .Distinct()
-            .ToList();
-
-  foreach (var property in bytePropertyNames)
+<#  foreach (var property in nonEnumProperties.Where(n => n.DataType.Equals("byte")))
     {
         var userControlName = property.Name;
         userControlName += "Control";
@@ -535,6 +524,7 @@ namespace Cbus.Odin
 
         #region Methods
 
+        public byte Get() => (byte)this.numericUpDown.Value;
 
         #endregion
 
@@ -542,6 +532,46 @@ namespace Cbus.Odin
 
         private void InitializeComponent()
         {
+            Label label;
+            label = new Label();
+            this.SuspendLayout();
+            // 
+            // numericUpDown
+            // 
+            this.numericUpDown.Location = new Point(87, 4);
+            this.numericUpDown.Maximum = 
+                new decimal(
+                    new int[] 
+                    {
+                        255,
+                        0,
+                        0,
+                        0
+                    }
+                );
+            this.numericUpDown.Name = "numericUpDown";
+            this.numericUpDown.Size = new Size(75, 27);
+            this.numericUpDown.TabIndex = 4;
+            // 
+            // label
+            // 
+            label.AutoSize = true;
+            label.Location = new Point(3, 6);
+            label.Name = "label";
+            label.Size = new Size(50, 20);
+            label.TabIndex = 3;
+            label.Text = "<#= userControlName #>";
+            // 
+            // <#= userControlName #>
+            // 
+            this.AutoScaleDimensions = new SizeF(8F, 20F);
+            this.AutoScaleMode = AutoScaleMode.Font;
+            this.Controls.Add(this.numericUpDown);
+            this.Controls.Add(label);
+            this.Name = "<#= userControlName #>";
+            this.Size = new Size(441, 150);
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
         #endregion
