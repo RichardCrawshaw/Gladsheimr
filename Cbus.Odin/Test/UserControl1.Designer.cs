@@ -45,15 +45,22 @@
             // 
             // numericUpDown
             // 
+            this.numericUpDown.Hexadecimal = true;
+            this.numericUpDown.Increment = new decimal(new int[] {
+            16,
+            0,
+            0,
+            0});
             this.numericUpDown.Location = new System.Drawing.Point(87, 4);
             this.numericUpDown.Maximum = new decimal(new int[] {
-            255,
+            65535,
             0,
             0,
             0});
             this.numericUpDown.Name = "numericUpDown";
-            this.numericUpDown.Size = new System.Drawing.Size(75, 27);
+            this.numericUpDown.Size = new System.Drawing.Size(98, 27);
             this.numericUpDown.TabIndex = 4;
+            this.numericUpDown.ThousandsSeparator = true;
             // 
             // UserControl1
             // 
@@ -62,7 +69,7 @@
             this.Controls.Add(this.numericUpDown);
             this.Controls.Add(label1);
             this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(441, 150);
+            this.Size = new System.Drawing.Size(193, 38);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

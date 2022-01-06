@@ -13,6 +13,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EnumControls.tt</DependentUpon>
     </None>
+    <None Include="Generated\NonEnumControls.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NonEnumControls.tt</DependentUpon>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -25,9 +30,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AvailableResources.tt</DependentUpon>
     </None>
+    <None Update="Generated\Common.t4">
+      <Generator></Generator>
+    </None>
     <None Update="Generated\EnumControls.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumControls.cs</LastGenOutput>
+    </None>
+    <None Update="Generated\NonEnumControls.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NonEnumControls.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
@@ -40,6 +52,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>EnumControls.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generated\NonEnumControls.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NonEnumControls.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 
