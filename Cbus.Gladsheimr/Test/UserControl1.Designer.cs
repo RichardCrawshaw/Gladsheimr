@@ -1,4 +1,4 @@
-﻿namespace Cbus.Odin.Test
+﻿namespace Cbus.Gladsheimr.Test
 {
     partial class UserControl1
     {

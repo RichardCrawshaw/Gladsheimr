@@ -1,4 +1,4 @@
-﻿namespace Cbus.Odin
+﻿namespace Cbus.Gladsheimr
 {
     partial class Form1
     {
@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.accErrorCodeControl1 = new Cbus.Odin.AccErrorCodeControl();
-            this.csFlagsControl1 = new Cbus.Odin.CSFlagsControl();
-            this.dccErrorCodeControl1 = new Cbus.Odin.DccErrorCodeControl();
-            this.engineStateControl1 = new Cbus.Odin.EngineStateControl();
-            this.functionRangeControl1 = new Cbus.Odin.FunctionRangeControl();
-            this.monthControl1 = new Cbus.Odin.MonthControl();
-            this.nodeFlagsControl1 = new Cbus.Odin.NodeFlagsControl();
-            this.serviceModeControl1 = new Cbus.Odin.ServiceModeControl();
-            this.SessionFlagsControl = new Cbus.Odin.SessionFlagsControl();
-            this.sessionStatusControl1 = new Cbus.Odin.SessionStatusControl();
-            this.speedModeControl1 = new Cbus.Odin.SpeedModeControl();
-            this.weekdayControl1 = new Cbus.Odin.WeekdayControl();
+            this.accErrorCodeControl1 = new Cbus.Gladsheimr.AccErrorCodeControl();
+            this.csFlagsControl1 = new Cbus.Gladsheimr.CSFlagsControl();
+            this.dccErrorCodeControl1 = new Cbus.Gladsheimr.DccErrorCodeControl();
+            this.engineStateControl1 = new Cbus.Gladsheimr.EngineStateControl();
+            this.functionRangeControl1 = new Cbus.Gladsheimr.FunctionRangeControl();
+            this.monthControl1 = new Cbus.Gladsheimr.MonthControl();
+            this.nodeFlagsControl1 = new Cbus.Gladsheimr.NodeFlagsControl();
+            this.serviceModeControl1 = new Cbus.Gladsheimr.ServiceModeControl();
+            this.SessionFlagsControl = new Cbus.Gladsheimr.SessionFlagsControl();
+            this.sessionStatusControl1 = new Cbus.Gladsheimr.SessionStatusControl();
+            this.speedModeControl1 = new Cbus.Gladsheimr.SpeedModeControl();
+            this.weekdayControl1 = new Cbus.Gladsheimr.WeekdayControl();
             this.SuspendLayout();
             // 
             // button1
@@ -85,18 +85,18 @@
 
         #endregion
 
-        private Cbus.Odin.AccErrorCodeControl accErrorCodeControl1;
-        private Cbus.Odin.CSFlagsControl csFlagsControl1;
-        private Cbus.Odin.DccErrorCodeControl dccErrorCodeControl1;
-        private Cbus.Odin.EngineStateControl engineStateControl1;
-        private Cbus.Odin.FunctionRangeControl functionRangeControl1;
-        private Cbus.Odin.MonthControl monthControl1;
-        private Cbus.Odin.NodeFlagsControl nodeFlagsControl1;
-        private Cbus.Odin.ServiceModeControl serviceModeControl1;
-        private Cbus.Odin.SessionFlagsControl SessionFlagsControl;
-        private Cbus.Odin.SessionStatusControl sessionStatusControl1;
-        private Cbus.Odin.SpeedModeControl speedModeControl1;
-        private Cbus.Odin.WeekdayControl weekdayControl1;
+        private Cbus.Gladsheimr.AccErrorCodeControl accErrorCodeControl1;
+        private Cbus.Gladsheimr.CSFlagsControl csFlagsControl1;
+        private Cbus.Gladsheimr.DccErrorCodeControl dccErrorCodeControl1;
+        private Cbus.Gladsheimr.EngineStateControl engineStateControl1;
+        private Cbus.Gladsheimr.FunctionRangeControl functionRangeControl1;
+        private Cbus.Gladsheimr.MonthControl monthControl1;
+        private Cbus.Gladsheimr.NodeFlagsControl nodeFlagsControl1;
+        private Cbus.Gladsheimr.ServiceModeControl serviceModeControl1;
+        private Cbus.Gladsheimr.SessionFlagsControl SessionFlagsControl;
+        private Cbus.Gladsheimr.SessionStatusControl sessionStatusControl1;
+        private Cbus.Gladsheimr.SpeedModeControl speedModeControl1;
+        private Cbus.Gladsheimr.WeekdayControl weekdayControl1;
         private System.Windows.Forms.Button button1;
     }
 }

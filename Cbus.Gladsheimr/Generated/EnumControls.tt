@@ -21,7 +21,7 @@
 	builder.Build();
 #>
 
-namespace Cbus.Odin
+namespace Cbus.Gladsheimr
 {
 <#  Common(builder);
 #>

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cbus.Odin.Test
+namespace Cbus.Gladsheimr.Test
 {
     public partial class UserControl1 : UserControl
     {
