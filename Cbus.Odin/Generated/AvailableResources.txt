@@ -1,0 +1,2 @@
+﻿CBUS.Bifrost.cbus-4.0-Rev-8d-Guide-6b-opcodes.txt
+CBUS.Bifrost.cbus-4.0-Rev-8j-Guide-6c-opcodes.txt
