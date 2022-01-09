@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Generated\MainFormGetUserControl.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MainFormGetUserControl.tt</DependentUpon>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cbus.Gladsheimr\Cbus.Gladsheimr.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Generated\MainFormGetUserControl.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MainFormGetUserControl.tt</DependentUpon>
+    </Compile>
+    <Compile Update="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Generated\MainFormGetUserControl.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MainFormGetUserControl.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,99 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ output extension=".cs" #>
+<#
+    var filename = Path.GetFullPath(this.Host.ResolvePath(@"..\MainForm.Designer.cs"));
+    var text = File.ReadAllText(filename);
+    var lines = text.Split("\r\n".ToCharArray());
+    var menuItems =
+        lines                      // 0         1         2         3         4         5
+            .Select(n => n.Trim()) // 012345678901234567890123456789012345678901234567890
+            .Where(n => n.StartsWith("private System.Windows.Forms.ToolStripMenuItem tsmi"))
+            .Select(n => n.Substring(51).TrimEnd(';'))
+            .OrderBy(n => n)
+            .ToList();
+
+    var path = this.Host.ResolvePath(@"..\..\Cbus.Gladsheimr\Generated\OpCodeControls.cs");
+    filename = Path.GetFullPath(path);
+    text = File.ReadAllText(filename);
+    lines = text.Split("\r\n".ToCharArray());
+    var regex = new Regex(@"^(\w+) : UserControl // 0x([\wA-Fa-f]{2}) (\w+)$");
+    var controls =
+        lines                      // 0         1         2
+            .Select(n => n.Trim()) // 012345678901234567890
+            .Where(n => n.StartsWith("public partial class "))
+            .Select(n => n.Substring(21))
+            .Select(n =>
+            {
+                var matches = regex.Matches(n);
+                var groups = matches[0].Groups;
+                return new { ControlName = groups[1].Value, Hex = groups[2].Value, Code = groups[3].Value, };
+            })
+            .Select(n => new
+            { 
+                ControlName = n.ControlName.Substring(0, n.ControlName.Length - 7), 
+                Value = int.Parse(n.Hex, System.Globalization.NumberStyles.HexNumber), 
+                n.Code, 
+            })
+            .OrderBy(n => n.ControlName)
+            .ToList();
+
+    var joined =
+        from m in menuItems
+        join c in controls on m equals c.ControlName
+        select new { MenuItem = m, ControlName = c.ControlName, c.Value, c.Code, };
+#>
+using System;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
+using Cbus.Gladsheimr.UserControls;
+
+namespace Cbus.Gladsheimr.Gui
+{
+    public partial class MainForm
+    {
+        private static UserControl? GetUserControl(string name)
+        {
+            var location = new Point(3, 19);
+            var tabIndex = 1;
+
+            return name switch
+            {
+<#  foreach (var item in joined)
+    {
+#>
+                "tsmi<#= item.MenuItem #>" => new <#= item.ControlName #>Control
+                {
+                    Location = location,
+                    Name = "<#= item.ControlName #>Control",
+                    TabIndex = tabIndex,
+                    TabStop = true,
+                },
+<#  }
+#>
+                _ => null
+            };
+        }
+
+        private static bool IsOpCodeWithNoData(string name)
+        {
+            var opCodes = new[]
+            {
+<#  foreach (var item in menuItems.Where(n => !joined.Any(j => j.MenuItem == n)))
+    {
+#>
+                "tsmi<#= item #>",
+<#  }
+#>
+            };
+
+            return opCodes.Contains(name);
+        }
+    }
+}

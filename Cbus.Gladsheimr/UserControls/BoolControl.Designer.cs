@@ -29,42 +29,45 @@
         private void InitializeComponent()
         {
             this.checkBox = new System.Windows.Forms.CheckBox();
-            this.radioButtonF = new System.Windows.Forms.RadioButton();
-            this.radioButtonR = new System.Windows.Forms.RadioButton();
+            this.radioButtonOn = new System.Windows.Forms.RadioButton();
+            this.radioButtonOff = new System.Windows.Forms.RadioButton();
             this.label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // checkBox
             // 
+            this.checkBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox.AutoSize = true;
-            this.checkBox.Location = new System.Drawing.Point(3, 5);
+            this.checkBox.Location = new System.Drawing.Point(103, 4);
             this.checkBox.Name = "checkBox";
             this.checkBox.Size = new System.Drawing.Size(95, 24);
             this.checkBox.TabIndex = 1;
             this.checkBox.Text = "CheckBox";
             this.checkBox.UseVisualStyleBackColor = true;
             // 
-            // radioButtonF
+            // radioButtonOn
             // 
-            this.radioButtonF.AutoSize = true;
-            this.radioButtonF.Location = new System.Drawing.Point(131, 3);
-            this.radioButtonF.Name = "radioButtonF";
-            this.radioButtonF.Size = new System.Drawing.Size(49, 24);
-            this.radioButtonF.TabIndex = 1;
-            this.radioButtonF.TabStop = true;
-            this.radioButtonF.Text = "On";
-            this.radioButtonF.UseVisualStyleBackColor = true;
+            this.radioButtonOn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonOn.AutoSize = true;
+            this.radioButtonOn.Location = new System.Drawing.Point(136, 3);
+            this.radioButtonOn.Name = "radioButtonOn";
+            this.radioButtonOn.Size = new System.Drawing.Size(49, 24);
+            this.radioButtonOn.TabIndex = 1;
+            this.radioButtonOn.TabStop = true;
+            this.radioButtonOn.Text = "On";
+            this.radioButtonOn.UseVisualStyleBackColor = true;
             // 
-            // radioButtonR
+            // radioButtonOff
             // 
-            this.radioButtonR.AutoSize = true;
-            this.radioButtonR.Location = new System.Drawing.Point(182, 3);
-            this.radioButtonR.Name = "radioButtonR";
-            this.radioButtonR.Size = new System.Drawing.Size(51, 24);
-            this.radioButtonR.TabIndex = 2;
-            this.radioButtonR.TabStop = true;
-            this.radioButtonR.Text = "Off";
-            this.radioButtonR.UseVisualStyleBackColor = true;
+            this.radioButtonOff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonOff.AutoSize = true;
+            this.radioButtonOff.Location = new System.Drawing.Point(187, 3);
+            this.radioButtonOff.Name = "radioButtonOff";
+            this.radioButtonOff.Size = new System.Drawing.Size(51, 24);
+            this.radioButtonOff.TabIndex = 2;
+            this.radioButtonOff.TabStop = true;
+            this.radioButtonOff.Text = "Off";
+            this.radioButtonOff.UseVisualStyleBackColor = true;
             // 
             // label
             // 
@@ -81,10 +84,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label);
             this.Controls.Add(this.checkBox);
-            this.Controls.Add(this.radioButtonF);
-            this.Controls.Add(this.radioButtonR);
+            this.Controls.Add(this.radioButtonOn);
+            this.Controls.Add(this.radioButtonOff);
             this.Name = "BoolControl";
-            this.Size = new System.Drawing.Size(441, 150);
+            this.Size = new System.Drawing.Size(234, 34);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,8 +98,6 @@
         private System.Windows.Forms.CheckBox checkBox;
         private System.Windows.Forms.RadioButton radioButtonOn;
         private System.Windows.Forms.RadioButton radioButtonOff;
-        private System.Windows.Forms.RadioButton radioButtonF;
-        private System.Windows.Forms.RadioButton radioButtonR;
         private System.Windows.Forms.Label label;
     }
 }

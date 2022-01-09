@@ -1,11 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Generated\MainFormGetUserControl.cs" />
+    <Compile Remove="MainForm.cs" />
+    <Compile Remove="MainForm.Designer.cs" />
+    <Compile Remove="Program.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="MainForm.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Generated\MainFormGetUserControl.tt" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="Generated\EnumControls.cs">
@@ -13,10 +28,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EnumControls.tt</DependentUpon>
     </None>
-    <None Include="Generated\NonEnumControls.cs">
+    <None Include="Generated\OpCodeControls.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>NonEnumControls.tt</DependentUpon>
+      <DependentUpon>OpCodeControls.tt</DependentUpon>
     </None>
   </ItemGroup>
 
@@ -37,9 +52,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumControls.cs</LastGenOutput>
     </None>
-    <None Update="Generated\NonEnumControls.tt">
+    <None Update="Generated\OpCodeControls.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NonEnumControls.cs</LastGenOutput>
+      <LastGenOutput>OpCodeControls.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
@@ -53,10 +68,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EnumControls.tt</DependentUpon>
     </Compile>
-    <Compile Update="Generated\NonEnumControls.cs">
+    <Compile Update="Generated\OpCodeControls.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>NonEnumControls.tt</DependentUpon>
+      <DependentUpon>OpCodeControls.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 

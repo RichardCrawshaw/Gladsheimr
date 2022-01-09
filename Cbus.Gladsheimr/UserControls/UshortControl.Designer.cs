@@ -1,6 +1,6 @@
-﻿namespace Cbus.Gladsheimr.Test
+﻿namespace Cbus.Gladsheimr.UserControls
 {
-    partial class UserControl1
+    partial class UshortControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,48 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label label1;
+            this.label = new System.Windows.Forms.Label();
             this.numericUpDown = new System.Windows.Forms.NumericUpDown();
-            label1 = new System.Windows.Forms.Label();
+            this.labelBase = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // label
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(3, 6);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(50, 20);
-            label1.TabIndex = 3;
-            label1.Text = "label1";
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(3, 5);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(42, 20);
+            this.label.TabIndex = 0;
+            this.label.Text = "label";
             // 
             // numericUpDown
             // 
-            this.numericUpDown.Hexadecimal = true;
+            this.numericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown.Increment = new decimal(new int[] {
             16,
             0,
             0,
             0});
-            this.numericUpDown.Location = new System.Drawing.Point(87, 4);
+            this.numericUpDown.Location = new System.Drawing.Point(127, 3);
             this.numericUpDown.Maximum = new decimal(new int[] {
-            65535,
+            65536,
             0,
             0,
             0});
             this.numericUpDown.Name = "numericUpDown";
-            this.numericUpDown.Size = new System.Drawing.Size(98, 27);
-            this.numericUpDown.TabIndex = 4;
-            this.numericUpDown.ThousandsSeparator = true;
+            this.numericUpDown.Size = new System.Drawing.Size(104, 27);
+            this.numericUpDown.TabIndex = 1;
             // 
-            // UserControl1
+            // labelBase
+            // 
+            this.labelBase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelBase.AutoSize = true;
+            this.labelBase.Location = new System.Drawing.Point(88, 5);
+            this.labelBase.Name = "labelBase";
+            this.labelBase.Size = new System.Drawing.Size(33, 20);
+            this.labelBase.TabIndex = 2;
+            this.labelBase.Text = "dec";
+            this.labelBase.DoubleClick += new System.EventHandler(this.LabelBase_DoubleClick);
+            // 
+            // UshortControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelBase);
             this.Controls.Add(this.numericUpDown);
-            this.Controls.Add(label1);
-            this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(193, 38);
+            this.Controls.Add(this.label);
+            this.Name = "UshortControl";
+            this.Size = new System.Drawing.Size(234, 34);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -78,6 +89,8 @@
 
         #endregion
 
+        private System.Windows.Forms.Label label;
         private System.Windows.Forms.NumericUpDown numericUpDown;
+        private System.Windows.Forms.Label labelBase;
     }
 }

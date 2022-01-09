@@ -21,7 +21,7 @@
 	builder.Build();
 #>
 
-namespace Cbus.Gladsheimr
+namespace Cbus.Gladsheimr.UserControls
 {
 <#  Common(builder);
 #>
@@ -86,10 +86,17 @@ namespace Cbus.Gladsheimr
 
         private readonly IContainer? components = null;
         private readonly ComboBox comboBox;
+        private readonly Label label;
 
 		#endregion
 
         #region Properties
+        
+        public string LabelText 
+        { 
+            get => this.label.Text;
+            set => this.label.Text = value;
+        }
 
         /// <summary>
         /// Gets the currently selected name.
@@ -119,6 +126,7 @@ namespace Cbus.Gladsheimr
 		public <#= userControlName #>()
 		{
             this.comboBox = new ComboBox();
+            this.label = new Label();
             InitializeComponent();
 		}
 
@@ -188,12 +196,11 @@ namespace Cbus.Gladsheimr
 
         private void InitializeComponent()
         {
-            Label label;
-            label = new Label();
             this.SuspendLayout();
             // 
             // comboBox
             // 
+            this.comboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             this.comboBox.FormattingEnabled = true;
             this.comboBox.Items.AddRange(values.Values.ToArray());
@@ -209,16 +216,16 @@ namespace Cbus.Gladsheimr
             label.Name = "label";
             label.Size = new Size(50, 20);
             label.TabIndex = 3;
-            label.Text = "<#= userControlName #>";
+            label.Text = "label";
             // 
             // <#= userControlName #>
             // 
             this.AutoScaleDimensions = new SizeF(8F, 20F);
             this.AutoScaleMode = AutoScaleMode.Font;
             this.Controls.Add(this.comboBox);
-            this.Controls.Add(label);
+            this.Controls.Add(this.label);
             this.Name = "<#= userControlName #>";
-            this.Size = new Size(441, 150);
+            this.Size = new Size(324, 34);
             this.ResumeLayout(false);
             this.PerformLayout();
         }

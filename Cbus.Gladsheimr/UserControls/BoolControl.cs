@@ -22,10 +22,19 @@ namespace Cbus.Gladsheimr.UserControls
 
         #region Properties
 
-        public string LabelText 
+        public string LabelText
         {
-            get => this.label.Text;
-            set => this.label.Text = value;
+            get
+            {
+                return this.UseCheckboxStyle 
+                    ? this.checkBox.Text 
+                    : this.label.Text;
+            }
+            set
+            {
+                this.label.Text = value;
+                this.checkBox.Text = value;
+            }
         }
 
         public string RadioButtonOnText
@@ -76,6 +85,14 @@ namespace Cbus.Gladsheimr.UserControls
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region Methods
+
+        public string Get() => this.useCheckboxStyle
+            ? this.checkBox.Checked ? "On" : "Off"
+            : this.Value ? this.RadioButtonOnText : this.RadioButtonOffText;
 
         #endregion
     }

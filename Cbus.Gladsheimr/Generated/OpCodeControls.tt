@@ -1,0 +1,165 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ include file="BifrostReference.t4" once="true" #>
+<#@ include file="Common.t4" once="true" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="CBUS.Bifrost" #>
+<#@ output extension=".cs" #>
+<#	var name = "cbus-4.0-Rev-8d-Guide-6b-opcodes";
+
+    Usings();
+    Header(name);
+
+	var loader = new Loader(name);
+	loader.LoadResource();
+
+	var builder = new Builder(loader);
+	builder.Build();
+#>
+
+namespace Cbus.Gladsheimr.UserControls
+{
+<#  Common(builder);
+#>
+    #region OpCode UserControls
+
+    // OpCodes without any properties (zero data) don't appear here as there is nothing to specify.
+
+<#	foreach (var opCodeBlock in builder.OpCodeBlocks.Where(n => n.Properties.Any()))
+	{
+        var className = opCodeBlock.ClassName + "Control";
+
+        var controls =
+            opCodeBlock.Properties
+                .Where(n => n.DataType != "char")
+                .Select(n =>
+                {
+                    var controlTypeName =
+                        n.DataType.Substring(0, 1).ToUpper() +
+                        n.DataType.Substring(1);
+                    if (controlTypeName.EndsWith("Enum"))
+                        controlTypeName = controlTypeName.Substring(0, controlTypeName.Length - 4);
+                    controlTypeName += "Control";
+                    var controlName =
+                        n.Name.Substring(0, 1).ToLower() + 
+                        n.Name.Substring(1) + 
+                        "Control";
+                    return new Tuple<string, string, string>(n.Name, controlTypeName, controlName);
+                })
+                .Select(n => (PropertyName: n.Item1, TypeName: n.Item2, Name: n.Item3))
+                .ToList();
+        if (opCodeBlock.Properties.Any(n => n.DataType == "char"))
+            controls.Add((PropertyName: "stringControl", TypeName: "StringControl", Name: "stringControl"));
+#>
+    #region 0x<#= opCodeBlock.Value.ToString("X2") #> <#= opCodeBlock.Code #> <#= opCodeBlock.Name #>
+
+    public partial class <#= className #> : UserControl // 0x<#= opCodeBlock.Value.ToString("X2") #> <#= opCodeBlock.Code #>
+    {
+        //  <#= opCodeBlock.Description #>
+
+        #region Fields
+
+        private readonly IContainer? components = null;
+<#      foreach (var control in controls)
+        {
+#>
+        private readonly <#= control.TypeName #> <#= control.Name #>;
+<#      }
+        #>
+
+        #endregion
+        
+        #region Properties
+
+<#      foreach (var property in opCodeBlock.Properties)
+        {
+#>
+        // Property: <#= property.Name #> <#= property.DataType #> <#= property.Format #>
+<#      }
+#>
+
+        #endregion
+
+        #region Constructors
+
+        public <#= className #>()
+        {
+<#      foreach (var control in controls)
+        {
+#>
+            this.<#= control.Name #> = new <#= control.TypeName #>();
+<#      }
+#>
+
+            InitializeComponent();
+        }
+
+        #endregion
+
+<#      GenerateIDisposableSupport();
+#>
+
+        #region Methods
+
+
+
+        #endregion
+
+        #region Support routines
+
+        private void InitializeComponent()
+        {
+            var x = 3;
+            var y = 3;
+
+            this.SuspendLayout();
+<#      
+        var tabIndex = 0;
+        foreach (var control in controls)
+        {
+#>
+            //
+            // <#= control.Name #>
+            //
+            this.<#= control.Name #>.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.<#= control.Name #>.Name = "<#= control.Name #>";
+            this.<#= control.Name #>.Location = new System.Drawing.Point(x, y);
+            this.<#= control.Name #>.TabIndex = <#= tabIndex++ #>;
+            this.<#= control.Name #>.LabelText = "<#= control.PropertyName #>";
+            y += this.<#= control.Name #>.Height;
+<#      }
+#>
+            //
+            // <#= className #>
+            //
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Name = "<#= className #>";
+<#      
+        foreach (var control in controls)
+        {
+#>
+            this.Controls.Add(<#= control.Name #>);
+<#      }
+#>          
+            var height = y + 3;
+            var width = 0;
+            foreach (Control control in this.Controls)
+                width = Math.Max(width, control.Width);
+            this.Size = new System.Drawing.Size(width, height);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+
+        #endregion
+    }
+
+    #endregion
+
+<#	}
+#>
+    #endregion
+}
