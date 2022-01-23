@@ -28,7 +28,7 @@ namespace Cbus.Gladsheimr.UserControls
             set
             {
                 this.numericUpDown.Hexadecimal = value;
-                Update();
+                UpdateControl();
             }
         }
 
@@ -59,7 +59,7 @@ namespace Cbus.Gladsheimr.UserControls
 
         #region Support routines
 
-        private void Update()
+        private void UpdateControl()
         {
             this.labelBase.Text = this.UseHex ? "0x" : "dec";
         }

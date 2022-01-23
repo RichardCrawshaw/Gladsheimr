@@ -27,9 +27,7 @@ namespace Cbus.Gladsheimr.UserControls
 #>
     #region OpCode UserControls
 
-    // OpCodes without any properties (zero data) don't appear here as there is nothing to specify.
-
-<#	foreach (var opCodeBlock in builder.OpCodeBlocks.Where(n => n.Properties.Any()))
+<#	foreach (var opCodeBlock in builder.OpCodeBlocks)//.Where(n => n.Properties.Any()))
 	{
         var className = opCodeBlock.ClassName + "Control";
 
@@ -48,16 +46,24 @@ namespace Cbus.Gladsheimr.UserControls
                         n.Name.Substring(0, 1).ToLower() + 
                         n.Name.Substring(1) + 
                         "Control";
-                    return new Tuple<string, string, string>(n.Name, controlTypeName, controlName);
+                    return new Tuple<string, string, string, string>(n.Name, controlTypeName, controlName, n.DataType);
                 })
-                .Select(n => (PropertyName: n.Item1, TypeName: n.Item2, Name: n.Item3))
+                .Select(n => (PropertyName: n.Item1, TypeName: n.Item2, Name: n.Item3, DataType: n.Item4))
                 .ToList();
         if (opCodeBlock.Properties.Any(n => n.DataType == "char"))
-            controls.Add((PropertyName: "stringControl", TypeName: "StringControl", Name: "stringControl"));
+            controls.Add((PropertyName: "StringControl", TypeName: "StringControl", Name: "stringControl", DataType: "string"));
 #>
     #region 0x<#= opCodeBlock.Value.ToString("X2") #> <#= opCodeBlock.Code #> <#= opCodeBlock.Name #>
 
-    public partial class <#= className #> : UserControl // 0x<#= opCodeBlock.Value.ToString("X2") #> <#= opCodeBlock.Code #>
+    [OpCodeControl(
+        Code = "<#= opCodeBlock.Code #>", 
+        Description = "<#= opCodeBlock.Description #>",
+        Group = "<#= opCodeBlock.Group #>", 
+        Name = "<#= opCodeBlock.Name #>", 
+        Number = <#= opCodeBlock.Value #>, 
+        Priority = <#= opCodeBlock.Priority #>)]
+    public partial class <#= className #> : UserControl, // 0x<#= opCodeBlock.Value.ToString("X2") #> <#= opCodeBlock.Code #>
+        IOpCodeControl
     {
         //  <#= opCodeBlock.Description #>
 
@@ -70,15 +76,27 @@ namespace Cbus.Gladsheimr.UserControls
         private readonly <#= control.TypeName #> <#= control.Name #>;
 <#      }
         #>
+        private readonly Button buttonSend;
 
         #endregion
         
         #region Properties
 
-<#      foreach (var property in opCodeBlock.Properties)
+        public string OpCodeCode => "<#= opCodeBlock.Code #>";
+
+<#      foreach (var control in controls)
         {
+            var dataType = control.DataType;
+            if (dataType.EndsWith("Enum"))
+                dataType = "string";
 #>
-        // Property: <#= property.Name #> <#= property.DataType #> <#= property.Format #>
+
+        // Control: <#= control.PropertyName #> <#= control.TypeName #> <#= control.Name #> <#= control.DataType #>
+        public <#= dataType #> <#= control.PropertyName #>
+        {
+            get => this.<#= control.Name #>.Value;
+            set => this.<#= control.Name #>.Value = value;
+        }
 <#      }
 #>
 
@@ -94,6 +112,7 @@ namespace Cbus.Gladsheimr.UserControls
             this.<#= control.Name #> = new <#= control.TypeName #>();
 <#      }
 #>
+            this.buttonSend = new Button();
 
             InitializeComponent();
         }
@@ -103,10 +122,13 @@ namespace Cbus.Gladsheimr.UserControls
 <#      GenerateIDisposableSupport();
 #>
 
-        #region Methods
-
-
-
+        #region Events
+        
+        /// <summary>
+        /// Occurs when the action button of the control is clicked.
+        /// </summary>
+        public event EventHandler? Actioned;
+        
         #endregion
 
         #region Support routines
@@ -133,6 +155,17 @@ namespace Cbus.Gladsheimr.UserControls
             y += this.<#= control.Name #>.Height;
 <#      }
 #>
+            // 
+            // buttonSend
+            // 
+            this.buttonSend.Location = new System.Drawing.Point(x, y);
+            this.buttonSend.Name = "buttonSend";
+            this.buttonSend.Size = new System.Drawing.Size(75, 23);
+            this.buttonSend.TabIndex = <#= tabIndex #>;
+            this.buttonSend.Text = "Send";
+            this.buttonSend.UseVisualStyleBackColor = true;
+            this.buttonSend.Click += this.ButtonSend_Click;
+
             //
             // <#= className #>
             //
@@ -145,6 +178,7 @@ namespace Cbus.Gladsheimr.UserControls
             this.Controls.Add(<#= control.Name #>);
 <#      }
 #>          
+            this.Controls.Add(this.buttonSend);
             var height = y + 3;
             var width = 0;
             foreach (Control control in this.Controls)
@@ -153,6 +187,12 @@ namespace Cbus.Gladsheimr.UserControls
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        #endregion
+
+        #region Event handler routines
+
+        private void ButtonSend_Click(object? sender, EventArgs ea) => this.Actioned?.Invoke(this, ea);
 
         #endregion
     }
