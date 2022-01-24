@@ -7,6 +7,23 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <GeneratedAssemblyInfoFile>assemblyinfo.cs</GeneratedAssemblyInfoFile>
+    <PackageId>Cbus.Gledsheimr</PackageId>
+    <Version>0.9.0-beta1</Version>
+    <Authors>Richard Crawshaw</Authors>
+    <Copyright>Richard Crawshaw</Copyright>
+    <Description>A Windows GUI project to provide UserControls for CBUS Op-Codes and their properties.</Description>
+    <PackageProjectUrl>https://github.com/RichardCrawshaw/Gladsheimr</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/RichardCrawshaw/Gladsheimr</RepositoryUrl>
+    <PackageTags>CBUS;MERG;MERGBUS;LCB</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <Title>Gledsheimr - WinForms .NET 5.0 UserControls for CBUS</Title>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Generated\MainFormGetUserControl.cs" />
     <Compile Remove="MainForm.cs" />
