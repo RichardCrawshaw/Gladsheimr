@@ -105,6 +105,7 @@ namespace Cbus.Gladsheimr.UserControls
 #>
 
         // Control: <#= control.PropertyName #> <#= control.TypeName #> <#= control.Name #> <#= control.DataType #>
+        [OpCodeParameter("<#= control.PropertyName #>", "<#= control.TypeName #>", "<#= control.Name #>", "<#= control.DataType #>")]
         public <#= dataType #> <#= control.PropertyName #>
         {
             get => this.<#= control.Name #>.Value;
