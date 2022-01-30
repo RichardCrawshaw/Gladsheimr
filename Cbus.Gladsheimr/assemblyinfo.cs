@@ -12,15 +12,15 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Richard Crawshaw")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Richard Crawshaw")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("A Windows GUI project to provide UserControls for CBUS Op-Codes and their propert" +
     "ies.")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("0.9.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.9.0-beta4")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("0.9.1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.9.1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cbus.Gladsheimr")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cbus.Gladsheimr")]
-[assembly: System.Reflection.AssemblyVersionAttribute("0.9.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("0.9.1.0")]
 [assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/RichardCrawshaw/Gladsheimr")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
