@@ -34,22 +34,22 @@ namespace Cbus.Gladsheimr.Gui
             if (control is null && !IsOpCodeWithNoData(tsmi.Name))
                 return;
             var label = GetLabel(tsmi.Text);
-            var button = GetButton();
+            //var button = GetButton();
 
             if (control is not null)
                 control.Size = new Size(this.panelOpCodes.Width - 6, control.Height);
 
-            button.Location =
-                new Point(
-                    this.panelOpCodes.Width - button.Width - 6,
-                    control is not null
-                        ? control.Location.Y + control.Height + 3
-                        : label.Location.Y + label.Height + 3);
+            //button.Location =
+            //    new Point(
+            //        this.panelOpCodes.Width - button.Width - 6,
+            //        control is not null
+            //            ? control.Location.Y + control.Height + 3
+            //            : label.Location.Y + label.Height + 3);
 
             this.panelOpCodes.Controls.Add(label);
             if (control is not null)
                 this.panelOpCodes.Controls.Add(control);
-            this.panelOpCodes.Controls.Add(button);
+            //this.panelOpCodes.Controls.Add(button);
         }
 
         private static Button GetButton()

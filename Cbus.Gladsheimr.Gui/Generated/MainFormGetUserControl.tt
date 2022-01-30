@@ -22,7 +22,7 @@
     filename = Path.GetFullPath(path);
     text = File.ReadAllText(filename);
     lines = text.Split("\r\n".ToCharArray());
-    var regex = new Regex(@"^(\w+) : UserControl // 0x([\wA-Fa-f]{2}) (\w+)$");
+    var regex = new Regex(@"^(\w+) : UserControl, // 0x([\wA-Fa-f]{2}) (\w+)$");
     var controls =
         lines                      // 0         1         2
             .Select(n => n.Trim()) // 012345678901234567890
@@ -70,6 +70,7 @@ namespace Cbus.Gladsheimr.Gui
 #>
                 "tsmi<#= item.MenuItem #>" => new <#= item.ControlName #>Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "<#= item.ControlName #>Control",
                     TabIndex = tabIndex,
