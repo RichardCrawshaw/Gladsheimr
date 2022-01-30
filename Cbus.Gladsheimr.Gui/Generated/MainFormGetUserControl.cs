@@ -10,13 +10,14 @@ namespace Cbus.Gladsheimr.Gui
     {
         private static UserControl? GetUserControl(string name)
         {
-            var location = new Point(3, 19);
+            var location = new Point(3, 27);
             var tabIndex = 1;
 
             return name switch
             {
                 "tsmiAccessoryNodeDataEvent" => new AccessoryNodeDataEventControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryNodeDataEventControl",
                     TabIndex = tabIndex,
@@ -24,6 +25,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryNodeDataResponse" => new AccessoryNodeDataResponseControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryNodeDataResponseControl",
                     TabIndex = tabIndex,
@@ -31,6 +33,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryOff" => new AccessoryOffControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryOffControl",
                     TabIndex = tabIndex,
@@ -38,6 +41,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryOff1" => new AccessoryOff1Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryOff1Control",
                     TabIndex = tabIndex,
@@ -45,6 +49,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryOff2" => new AccessoryOff2Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryOff2Control",
                     TabIndex = tabIndex,
@@ -52,6 +57,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryOff3" => new AccessoryOff3Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryOff3Control",
                     TabIndex = tabIndex,
@@ -59,6 +65,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryOffResponseEvent" => new AccessoryOffResponseEventControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryOffResponseEventControl",
                     TabIndex = tabIndex,
@@ -66,6 +73,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryOffResponseEvent1" => new AccessoryOffResponseEvent1Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryOffResponseEvent1Control",
                     TabIndex = tabIndex,
@@ -73,6 +81,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryOffResponseEvent2" => new AccessoryOffResponseEvent2Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryOffResponseEvent2Control",
                     TabIndex = tabIndex,
@@ -80,6 +89,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryOffResponseEvent3" => new AccessoryOffResponseEvent3Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryOffResponseEvent3Control",
                     TabIndex = tabIndex,
@@ -87,6 +97,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryOn" => new AccessoryOnControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryOnControl",
                     TabIndex = tabIndex,
@@ -94,6 +105,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryOn1" => new AccessoryOn1Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryOn1Control",
                     TabIndex = tabIndex,
@@ -101,6 +113,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryOn2" => new AccessoryOn2Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryOn2Control",
                     TabIndex = tabIndex,
@@ -108,6 +121,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryOn3" => new AccessoryOn3Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryOn3Control",
                     TabIndex = tabIndex,
@@ -115,6 +129,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryOnResponseEvent" => new AccessoryOnResponseEventControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryOnResponseEventControl",
                     TabIndex = tabIndex,
@@ -122,6 +137,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryOnResponseEvent1" => new AccessoryOnResponseEvent1Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryOnResponseEvent1Control",
                     TabIndex = tabIndex,
@@ -129,6 +145,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryOnResponseEvent2" => new AccessoryOnResponseEvent2Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryOnResponseEvent2Control",
                     TabIndex = tabIndex,
@@ -136,6 +153,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryOnResponseEvent3" => new AccessoryOnResponseEvent3Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryOnResponseEvent3Control",
                     TabIndex = tabIndex,
@@ -143,6 +161,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryRequestEvent" => new AccessoryRequestEventControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryRequestEventControl",
                     TabIndex = tabIndex,
@@ -150,6 +169,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryShortOff" => new AccessoryShortOffControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryShortOffControl",
                     TabIndex = tabIndex,
@@ -157,6 +177,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryShortOff1" => new AccessoryShortOff1Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryShortOff1Control",
                     TabIndex = tabIndex,
@@ -164,6 +185,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryShortOff2" => new AccessoryShortOff2Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryShortOff2Control",
                     TabIndex = tabIndex,
@@ -171,6 +193,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryShortOff3" => new AccessoryShortOff3Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryShortOff3Control",
                     TabIndex = tabIndex,
@@ -178,6 +201,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryShortOn" => new AccessoryShortOnControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryShortOnControl",
                     TabIndex = tabIndex,
@@ -185,6 +209,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryShortOn1" => new AccessoryShortOn1Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryShortOn1Control",
                     TabIndex = tabIndex,
@@ -192,6 +217,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryShortOn2" => new AccessoryShortOn2Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryShortOn2Control",
                     TabIndex = tabIndex,
@@ -199,6 +225,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryShortOn3" => new AccessoryShortOn3Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryShortOn3Control",
                     TabIndex = tabIndex,
@@ -206,6 +233,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryShortRequestEvent" => new AccessoryShortRequestEventControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryShortRequestEventControl",
                     TabIndex = tabIndex,
@@ -213,6 +241,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryShortResponseOff" => new AccessoryShortResponseOffControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryShortResponseOffControl",
                     TabIndex = tabIndex,
@@ -220,6 +249,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryShortResponseOff1" => new AccessoryShortResponseOff1Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryShortResponseOff1Control",
                     TabIndex = tabIndex,
@@ -227,6 +257,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryShortResponseOff2" => new AccessoryShortResponseOff2Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryShortResponseOff2Control",
                     TabIndex = tabIndex,
@@ -234,6 +265,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryShortResponseOff3" => new AccessoryShortResponseOff3Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryShortResponseOff3Control",
                     TabIndex = tabIndex,
@@ -241,6 +273,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryShortResponseOn" => new AccessoryShortResponseOnControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryShortResponseOnControl",
                     TabIndex = tabIndex,
@@ -248,6 +281,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryShortResponseOn1" => new AccessoryShortResponseOn1Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryShortResponseOn1Control",
                     TabIndex = tabIndex,
@@ -255,6 +289,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryShortResponseOn2" => new AccessoryShortResponseOn2Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryShortResponseOn2Control",
                     TabIndex = tabIndex,
@@ -262,6 +297,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAccessoryShortResponseOn3" => new AccessoryShortResponseOn3Control
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AccessoryShortResponseOn3Control",
                     TabIndex = tabIndex,
@@ -269,13 +305,31 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiAllocateLocoToActivity" => new AllocateLocoToActivityControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "AllocateLocoToActivityControl",
                     TabIndex = tabIndex,
                     TabStop = true,
                 },
+                "tsmiBusHalt" => new BusHaltControl
+                {
+                    AutoSize = true,
+                    Location = location,
+                    Name = "BusHaltControl",
+                    TabIndex = tabIndex,
+                    TabStop = true,
+                },
+                "tsmiBusOn" => new BusOnControl
+                {
+                    AutoSize = true,
+                    Location = location,
+                    Name = "BusOnControl",
+                    TabIndex = tabIndex,
+                    TabStop = true,
+                },
                 "tsmiClearAllEventsFromANode" => new ClearAllEventsFromANodeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ClearAllEventsFromANodeControl",
                     TabIndex = tabIndex,
@@ -283,6 +337,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiCommandStationErrorReport" => new CommandStationErrorReportControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "CommandStationErrorReportControl",
                     TabIndex = tabIndex,
@@ -290,6 +345,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiCommandStationStatusReport" => new CommandStationStatusReportControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "CommandStationStatusReportControl",
                     TabIndex = tabIndex,
@@ -297,6 +353,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiConsistEngine" => new ConsistEngineControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ConsistEngineControl",
                     TabIndex = tabIndex,
@@ -304,6 +361,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiDebugWithOneDataByte" => new DebugWithOneDataByteControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "DebugWithOneDataByteControl",
                     TabIndex = tabIndex,
@@ -311,6 +369,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiDeviceDataEventShortMode" => new DeviceDataEventShortModeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "DeviceDataEventShortModeControl",
                     TabIndex = tabIndex,
@@ -318,13 +377,23 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiDeviceDataResponseShortMode" => new DeviceDataResponseShortModeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "DeviceDataResponseShortModeControl",
                     TabIndex = tabIndex,
                     TabStop = true,
                 },
+                "tsmiEmergencyStop" => new EmergencyStopControl
+                {
+                    AutoSize = true,
+                    Location = location,
+                    Name = "EmergencyStopControl",
+                    TabIndex = tabIndex,
+                    TabStop = true,
+                },
                 "tsmiEngineReport" => new EngineReportControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "EngineReportControl",
                     TabIndex = tabIndex,
@@ -332,6 +401,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiErrorMessagesFromNodesDuringConfiguration" => new ErrorMessagesFromNodesDuringConfigurationControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ErrorMessagesFromNodesDuringConfigurationControl",
                     TabIndex = tabIndex,
@@ -339,6 +409,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiEventSpaceLeftReplyFromNode" => new EventSpaceLeftReplyFromNodeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "EventSpaceLeftReplyFromNodeControl",
                     TabIndex = tabIndex,
@@ -346,6 +417,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiExtendedOpcodeWith1DataByte" => new ExtendedOpcodeWith1DataByteControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ExtendedOpcodeWith1DataByteControl",
                     TabIndex = tabIndex,
@@ -353,6 +425,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiExtendedOpcodeWith2DataBytes" => new ExtendedOpcodeWith2DataBytesControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ExtendedOpcodeWith2DataBytesControl",
                     TabIndex = tabIndex,
@@ -360,6 +433,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiExtendedOpcodeWith3DataBytes" => new ExtendedOpcodeWith3DataBytesControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ExtendedOpcodeWith3DataBytesControl",
                     TabIndex = tabIndex,
@@ -367,6 +441,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiExtendedOpcodeWith4DataBytes" => new ExtendedOpcodeWith4DataBytesControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ExtendedOpcodeWith4DataBytesControl",
                     TabIndex = tabIndex,
@@ -374,6 +449,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiExtendedOpcodeWith5DataBytes" => new ExtendedOpcodeWith5DataBytesControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ExtendedOpcodeWith5DataBytesControl",
                     TabIndex = tabIndex,
@@ -381,6 +457,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiExtendedOpcodeWith6DataBytes" => new ExtendedOpcodeWith6DataBytesControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ExtendedOpcodeWith6DataBytesControl",
                     TabIndex = tabIndex,
@@ -388,6 +465,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiExtendedOpcodeWithNoDataBytes" => new ExtendedOpcodeWithNoDataBytesControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ExtendedOpcodeWithNoDataBytesControl",
                     TabIndex = tabIndex,
@@ -395,6 +473,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiFastClock" => new FastClockControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "FastClockControl",
                     TabIndex = tabIndex,
@@ -402,6 +481,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiForceASelfEnumerationCycleForUseWithCan" => new ForceASelfEnumerationCycleForUseWithCanControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ForceASelfEnumerationCycleForUseWithCanControl",
                     TabIndex = tabIndex,
@@ -409,6 +489,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiGetEngineSession" => new GetEngineSessionControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "GetEngineSessionControl",
                     TabIndex = tabIndex,
@@ -416,6 +497,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiNodeNumberAcknowledge" => new NodeNumberAcknowledgeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "NodeNumberAcknowledgeControl",
                     TabIndex = tabIndex,
@@ -423,6 +505,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiNodeNumberRelease" => new NodeNumberReleaseControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "NodeNumberReleaseControl",
                     TabIndex = tabIndex,
@@ -430,6 +513,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiNumberOfEventsStoredInNode" => new NumberOfEventsStoredInNodeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "NumberOfEventsStoredInNodeControl",
                     TabIndex = tabIndex,
@@ -437,6 +521,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiPutNodeIntoBootloadMode" => new PutNodeIntoBootloadModeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "PutNodeIntoBootloadModeControl",
                     TabIndex = tabIndex,
@@ -444,6 +529,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiQueryConsist" => new QueryConsistControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "QueryConsistControl",
                     TabIndex = tabIndex,
@@ -451,13 +537,23 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiQueryEngine" => new QueryEngineControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "QueryEngineControl",
                     TabIndex = tabIndex,
                     TabStop = true,
                 },
+                "tsmiQueryNodeNumber" => new QueryNodeNumberControl
+                {
+                    AutoSize = true,
+                    Location = location,
+                    Name = "QueryNodeNumberControl",
+                    TabIndex = tabIndex,
+                    TabStop = true,
+                },
                 "tsmiReadBackAllStoredEventsInANode" => new ReadBackAllStoredEventsInANodeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ReadBackAllStoredEventsInANodeControl",
                     TabIndex = tabIndex,
@@ -465,6 +561,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiReadCv" => new ReadCvControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ReadCvControl",
                     TabIndex = tabIndex,
@@ -472,6 +569,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiReadEventVariableInLearnMode" => new ReadEventVariableInLearnModeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ReadEventVariableInLearnModeControl",
                     TabIndex = tabIndex,
@@ -479,6 +577,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiReadNumberOfEventsAvailableInANode" => new ReadNumberOfEventsAvailableInANodeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ReadNumberOfEventsAvailableInANodeControl",
                     TabIndex = tabIndex,
@@ -486,6 +585,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiReleaseEngine" => new ReleaseEngineControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ReleaseEngineControl",
                     TabIndex = tabIndex,
@@ -493,6 +593,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiReleaseNodeFromLearnMode" => new ReleaseNodeFromLearnModeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ReleaseNodeFromLearnModeControl",
                     TabIndex = tabIndex,
@@ -500,6 +601,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiRemoveEngineFromConsist" => new RemoveEngineFromConsistControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "RemoveEngineFromConsistControl",
                     TabIndex = tabIndex,
@@ -507,6 +609,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiReportCv" => new ReportCvControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ReportCvControl",
                     TabIndex = tabIndex,
@@ -514,6 +617,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiRequest3ByteDccPacket" => new Request3ByteDccPacketControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "Request3ByteDccPacketControl",
                     TabIndex = tabIndex,
@@ -521,6 +625,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiRequest4ByteDccPacket" => new Request4ByteDccPacketControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "Request4ByteDccPacketControl",
                     TabIndex = tabIndex,
@@ -528,6 +633,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiRequest5ByteDccPacket" => new Request5ByteDccPacketControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "Request5ByteDccPacketControl",
                     TabIndex = tabIndex,
@@ -535,20 +641,39 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiRequest6ByteDccPacket" => new Request6ByteDccPacketControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "Request6ByteDccPacketControl",
                     TabIndex = tabIndex,
                     TabStop = true,
                 },
+                "tsmiRequestCommandStationStatus" => new RequestCommandStationStatusControl
+                {
+                    AutoSize = true,
+                    Location = location,
+                    Name = "RequestCommandStationStatusControl",
+                    TabIndex = tabIndex,
+                    TabStop = true,
+                },
                 "tsmiRequestDeviceDataShortMode" => new RequestDeviceDataShortModeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "RequestDeviceDataShortModeControl",
                     TabIndex = tabIndex,
                     TabStop = true,
                 },
+                "tsmiRequestEmergencyStopAll" => new RequestEmergencyStopAllControl
+                {
+                    AutoSize = true,
+                    Location = location,
+                    Name = "RequestEmergencyStopAllControl",
+                    TabIndex = tabIndex,
+                    TabStop = true,
+                },
                 "tsmiRequestEngineSession" => new RequestEngineSessionControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "RequestEngineSessionControl",
                     TabIndex = tabIndex,
@@ -556,13 +681,23 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiRequestForReadOfAnEventVariable" => new RequestForReadOfAnEventVariableControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "RequestForReadOfAnEventVariableControl",
                     TabIndex = tabIndex,
                     TabStop = true,
                 },
+                "tsmiRequestModuleName" => new RequestModuleNameControl
+                {
+                    AutoSize = true,
+                    Location = location,
+                    Name = "RequestModuleNameControl",
+                    TabIndex = tabIndex,
+                    TabStop = true,
+                },
                 "tsmiRequestNodeDataEvent" => new RequestNodeDataEventControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "RequestNodeDataEventControl",
                     TabIndex = tabIndex,
@@ -570,13 +705,23 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiRequestNodeNumber" => new RequestNodeNumberControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "RequestNodeNumberControl",
                     TabIndex = tabIndex,
                     TabStop = true,
                 },
+                "tsmiRequestNodeParameters" => new RequestNodeParametersControl
+                {
+                    AutoSize = true,
+                    Location = location,
+                    Name = "RequestNodeParametersControl",
+                    TabIndex = tabIndex,
+                    TabStop = true,
+                },
                 "tsmiRequestReadOfANodeParameterByIndex" => new RequestReadOfANodeParameterByIndexControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "RequestReadOfANodeParameterByIndexControl",
                     TabIndex = tabIndex,
@@ -584,6 +729,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiRequestReadOfANodeVariable" => new RequestReadOfANodeVariableControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "RequestReadOfANodeVariableControl",
                     TabIndex = tabIndex,
@@ -591,6 +737,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiRequestReadOfStoredEventsByEventIndex" => new RequestReadOfStoredEventsByEventIndexControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "RequestReadOfStoredEventsByEventIndexControl",
                     TabIndex = tabIndex,
@@ -598,13 +745,31 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiRequestToReadNumberOfStoredEvents" => new RequestToReadNumberOfStoredEventsControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "RequestToReadNumberOfStoredEventsControl",
                     TabIndex = tabIndex,
                     TabStop = true,
                 },
+                "tsmiRequestTrackOff" => new RequestTrackOffControl
+                {
+                    AutoSize = true,
+                    Location = location,
+                    Name = "RequestTrackOffControl",
+                    TabIndex = tabIndex,
+                    TabStop = true,
+                },
+                "tsmiRequestTrackOn" => new RequestTrackOnControl
+                {
+                    AutoSize = true,
+                    Location = location,
+                    Name = "RequestTrackOnControl",
+                    TabIndex = tabIndex,
+                    TabStop = true,
+                },
                 "tsmiResponseToARequestForAnEvValueInANodeInLearnMode" => new ResponseToARequestForAnEvValueInANodeInLearnModeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ResponseToARequestForAnEvValueInANodeInLearnModeControl",
                     TabIndex = tabIndex,
@@ -612,6 +777,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiResponseToARequestForANodeVariableValue" => new ResponseToARequestForANodeVariableValueControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ResponseToARequestForANodeVariableValueControl",
                     TabIndex = tabIndex,
@@ -619,6 +785,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiResponseToQueryNode" => new ResponseToQueryNodeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ResponseToQueryNodeControl",
                     TabIndex = tabIndex,
@@ -626,6 +793,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiResponseToRequestForIndividualNodeParameter" => new ResponseToRequestForIndividualNodeParameterControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ResponseToRequestForIndividualNodeParameterControl",
                     TabIndex = tabIndex,
@@ -633,6 +801,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiResponseToRequestForNodeNameString" => new ResponseToRequestForNodeNameStringControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ResponseToRequestForNodeNameStringControl",
                     TabIndex = tabIndex,
@@ -640,6 +809,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiResponseToRequestForNodeParameters" => new ResponseToRequestForNodeParametersControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ResponseToRequestForNodeParametersControl",
                     TabIndex = tabIndex,
@@ -647,6 +817,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiResponseToRequestForReadOfEvValue" => new ResponseToRequestForReadOfEvValueControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ResponseToRequestForReadOfEvValueControl",
                     TabIndex = tabIndex,
@@ -654,6 +825,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiResponseToRequestToReadNodeEvents" => new ResponseToRequestToReadNodeEventsControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ResponseToRequestToReadNodeEventsControl",
                     TabIndex = tabIndex,
@@ -661,6 +833,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiServiceModeStatus" => new ServiceModeStatusControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "ServiceModeStatusControl",
                     TabIndex = tabIndex,
@@ -668,6 +841,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiSessionKeepAlive" => new SessionKeepAliveControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "SessionKeepAliveControl",
                     TabIndex = tabIndex,
@@ -675,6 +849,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiSetACan_idInExistingFlimNode" => new SetACan_idInExistingFlimNodeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "SetACan_idInExistingFlimNodeControl",
                     TabIndex = tabIndex,
@@ -682,6 +857,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiSetANodeVariable" => new SetANodeVariableControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "SetANodeVariableControl",
                     TabIndex = tabIndex,
@@ -689,6 +865,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiSetCabSessionMode" => new SetCabSessionModeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "SetCabSessionModeControl",
                     TabIndex = tabIndex,
@@ -696,6 +873,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiSetEngineFlags" => new SetEngineFlagsControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "SetEngineFlagsControl",
                     TabIndex = tabIndex,
@@ -703,6 +881,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiSetEngineFunctionOff" => new SetEngineFunctionOffControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "SetEngineFunctionOffControl",
                     TabIndex = tabIndex,
@@ -710,6 +889,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiSetEngineFunctionOn" => new SetEngineFunctionOnControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "SetEngineFunctionOnControl",
                     TabIndex = tabIndex,
@@ -717,6 +897,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiSetEngineFunctions" => new SetEngineFunctionsControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "SetEngineFunctionsControl",
                     TabIndex = tabIndex,
@@ -724,6 +905,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiSetEngineSpeedAndDirection" => new SetEngineSpeedAndDirectionControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "SetEngineSpeedAndDirectionControl",
                     TabIndex = tabIndex,
@@ -731,6 +913,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiSetNodeIntoLearnMode" => new SetNodeIntoLearnModeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "SetNodeIntoLearnModeControl",
                     TabIndex = tabIndex,
@@ -738,13 +921,23 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiSetNodeNumber" => new SetNodeNumberControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "SetNodeNumberControl",
                     TabIndex = tabIndex,
                     TabStop = true,
                 },
+                "tsmiSystemReset" => new SystemResetControl
+                {
+                    AutoSize = true,
+                    Location = location,
+                    Name = "SystemResetControl",
+                    TabIndex = tabIndex,
+                    TabStop = true,
+                },
                 "tsmiTeachAnEventInLearnMode" => new TeachAnEventInLearnModeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "TeachAnEventInLearnModeControl",
                     TabIndex = tabIndex,
@@ -752,13 +945,31 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiTeachAnEventInLearnModeUsingEventIndexing" => new TeachAnEventInLearnModeUsingEventIndexingControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "TeachAnEventInLearnModeUsingEventIndexingControl",
                     TabIndex = tabIndex,
                     TabStop = true,
                 },
+                "tsmiTrackOff" => new TrackOffControl
+                {
+                    AutoSize = true,
+                    Location = location,
+                    Name = "TrackOffControl",
+                    TabIndex = tabIndex,
+                    TabStop = true,
+                },
+                "tsmiTrackOn" => new TrackOnControl
+                {
+                    AutoSize = true,
+                    Location = location,
+                    Name = "TrackOnControl",
+                    TabIndex = tabIndex,
+                    TabStop = true,
+                },
                 "tsmiUnlearnAnEventInLearnMode" => new UnlearnAnEventInLearnModeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "UnlearnAnEventInLearnModeControl",
                     TabIndex = tabIndex,
@@ -766,6 +977,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiWriteAcknowledge" => new WriteAcknowledgeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "WriteAcknowledgeControl",
                     TabIndex = tabIndex,
@@ -773,6 +985,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiWriteCvBitInOpsMode" => new WriteCvBitInOpsModeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "WriteCvBitInOpsModeControl",
                     TabIndex = tabIndex,
@@ -780,6 +993,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiWriteCvByteInOpsMode" => new WriteCvByteInOpsModeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "WriteCvByteInOpsModeControl",
                     TabIndex = tabIndex,
@@ -787,6 +1001,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiWriteCvByteInOpsModeByAddress" => new WriteCvByteInOpsModeByAddressControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "WriteCvByteInOpsModeByAddressControl",
                     TabIndex = tabIndex,
@@ -794,6 +1009,7 @@ namespace Cbus.Gladsheimr.Gui
                 },
                 "tsmiWriteCvInServiceMode" => new WriteCvInServiceModeControl
                 {
+                    AutoSize = true,
                     Location = location,
                     Name = "WriteCvInServiceModeControl",
                     TabIndex = tabIndex,
@@ -808,21 +1024,8 @@ namespace Cbus.Gladsheimr.Gui
             var opCodes = new[]
             {
                 "tsmiAcknowledgement",
-                "tsmiBusHalt",
-                "tsmiBusOn",
-                "tsmiEmergencyStop",
                 "tsmiNack",
-                "tsmiQueryNodeNumber",
                 "tsmiQueryNodeResponse",
-                "tsmiRequestCommandStationStatus",
-                "tsmiRequestEmergencyStopAll",
-                "tsmiRequestModuleName",
-                "tsmiRequestNodeParameters",
-                "tsmiRequestTrackOff",
-                "tsmiRequestTrackOn",
-                "tsmiSystemReset",
-                "tsmiTrackOff",
-                "tsmiTrackOn",
             };
 
             return opCodes.Contains(name);

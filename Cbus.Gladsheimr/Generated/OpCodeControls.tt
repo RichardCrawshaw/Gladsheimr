@@ -52,6 +52,17 @@ namespace Cbus.Gladsheimr.UserControls
                 .ToList();
         if (opCodeBlock.Properties.Any(n => n.DataType == "char"))
             controls.Add((PropertyName: "StringControl", TypeName: "StringControl", Name: "stringControl", DataType: "string"));
+
+        var requests =
+            builder.ResponseBlocks
+                .Where(r => r.RequestOpCode == opCodeBlock.Code)
+                .Select(r => r.ResponseOpCode)
+                .ToList();
+        var responses =
+            builder.ResponseBlocks
+                .Where(r => r.ResponseOpCode == opCodeBlock.Code)
+                .Select(r => r.RequestOpCode)
+                .ToList();
 #>
     #region 0x<#= opCodeBlock.Value.ToString("X2") #> <#= opCodeBlock.Code #> <#= opCodeBlock.Name #>
 
@@ -61,7 +72,9 @@ namespace Cbus.Gladsheimr.UserControls
         Group = "<#= opCodeBlock.Group #>", 
         Name = "<#= opCodeBlock.Name #>", 
         Number = <#= opCodeBlock.Value #>, 
-        Priority = <#= opCodeBlock.Priority #>)]
+        Priority = <#= opCodeBlock.Priority #>,
+        Requests = new string[] { <#= string.Join(",", requests.Select(r => $"\"{r}\"")) #> },
+        Responses = new string[] { <#= string.Join(",", responses.Select(r => $"\"{r}\"")) #> })]
     public partial class <#= className #> : UserControl, // 0x<#= opCodeBlock.Value.ToString("X2") #> <#= opCodeBlock.Code #>
         IOpCodeControl
     {
@@ -160,7 +173,7 @@ namespace Cbus.Gladsheimr.UserControls
             // 
             this.buttonSend.Location = new System.Drawing.Point(x, y);
             this.buttonSend.Name = "buttonSend";
-            this.buttonSend.Size = new System.Drawing.Size(75, 23);
+            this.buttonSend.Size = new System.Drawing.Size(75, 29);
             this.buttonSend.TabIndex = <#= tabIndex #>;
             this.buttonSend.Text = "Send";
             this.buttonSend.UseVisualStyleBackColor = true;
@@ -183,6 +196,7 @@ namespace Cbus.Gladsheimr.UserControls
             var width = 0;
             foreach (Control control in this.Controls)
                 width = Math.Max(width, control.Width);
+            this.BorderStyle = BorderStyle.FixedSingle;
             this.Size = new System.Drawing.Size(width, height);
             this.ResumeLayout(false);
             this.PerformLayout();

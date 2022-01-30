@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyDescriptionAttribute("A Windows GUI project to provide UserControls for CBUS Op-Codes and their propert" +
     "ies.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("0.9.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.9.0-beta1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.9.0-beta3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cbus.Gladsheimr")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cbus.Gladsheimr")]
 [assembly: System.Reflection.AssemblyVersionAttribute("0.9.0.0")]

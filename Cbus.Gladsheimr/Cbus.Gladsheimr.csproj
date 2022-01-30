@@ -10,7 +10,7 @@
   <PropertyGroup>
     <GeneratedAssemblyInfoFile>assemblyinfo.cs</GeneratedAssemblyInfoFile>
     <PackageId>Cbus.Gledsheimr</PackageId>
-    <Version>0.9.0-beta1</Version>
+    <Version>0.9.0-beta3</Version>
     <Authors>Richard Crawshaw</Authors>
     <Copyright>Richard Crawshaw</Copyright>
     <Description>A Windows GUI project to provide UserControls for CBUS Op-Codes and their properties.</Description>
